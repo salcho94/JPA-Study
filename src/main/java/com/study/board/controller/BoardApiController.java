@@ -1,7 +1,9 @@
 package com.study.board.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import com.study.paging.CommonParams;
 import org.springframework.web.bind.annotation.*;
 
 import com.study.board.dto.BoardRequestDto;
@@ -29,8 +31,9 @@ public class BoardApiController {
      * 게시글 리스트 조회
      */
     @GetMapping("/boards")
-    public List<BoardResponseDto> findAll() {
-        return boardService.findAll();
+    public Map<String, Object> findAll(final CommonParams params)
+    {
+        return boardService.findAll(params);
     }
 
     /**
