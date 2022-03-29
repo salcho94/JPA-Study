@@ -2,13 +2,7 @@ package com.study.board.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.study.board.dto.BoardRequestDto;
 import com.study.board.dto.BoardResponseDto;
@@ -45,6 +39,17 @@ public class BoardApiController {
     @PatchMapping("/boards/{id}")
     public Long save(@PathVariable final Long id, @RequestBody final BoardRequestDto params) {
         return boardService.update(id, params);
+    }
+
+    //게시글 삭제
+    @DeleteMapping("/boards/{id}")
+    public Long delete (@PathVariable final Long id){
+        return boardService.delete(id);
+    }
+
+    @GetMapping("boards/{id}")
+    public BoardResponseDto findById(@PathVariable final Long id){
+        return boardService.findById(id);
     }
 
 }
