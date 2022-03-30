@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" layout:decorator="layout">
+    <th:block layout:fragment="content">
+        <div class="card-content">
+            <form>
+                <div class="form-group">
+                  아이디
+                    <input type="text" id="id" class="form-control w-50" >
+                </div>
+                <div class="form-group">
+                    비밀번호
+                    <input type="text" id="password" class="form-control w-50" >
+                </div>
+            </form>
+            <div class="btn_wrap text-center">
+                <a href="javascript:void(0);" onclick="goList();" class="btn btn-default waves-effect waves-light">아이디/비밀번호 찾기</a>
+                <a href="javascript:location.href ='/board/list'" class="btn btn-primary waves-effect waves-light">로그인</a>
+                <button type="button" onclick="deleteBoard();" class="btn btn-danger waves-effect waves-light">회원가입</button>
+            </div>
+        </div>
+    </th:block>
+
+</html>

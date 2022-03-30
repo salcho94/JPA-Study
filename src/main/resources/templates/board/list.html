@@ -147,9 +147,9 @@
                     response.list.forEach((obj, idx) => {
                         const viewUri = `/board/view/${obj.id}` + '?' + queryString;
                         html += `
-   				<tr>
+   				<tr onclick="location.href ='${viewUri}'" style="cursor: pointer;">
 						<td>${num--}</td>
-						<td class="text-left"><a href="${viewUri}">${obj.title}</a></td>
+						<td class="text-left">${obj.title}</td>
 						<td>${obj.writer}</td>
 						<td>${moment(obj.createdDate).format('YYYY-MM-DD HH:mm:ss')}</td>
 						<td>${obj.hits}</td>
